@@ -20,8 +20,8 @@ public class MysqlConnector {
     
     public Connection connect() {
         try {
-            Class.forName("com.nysql.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/mydb?user=root&password=password&useSSL=false");
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/minecraft?user=root&password=&useSSL=false");
             return connection;
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(MysqlConnector.class.getName()).log(Level.SEVERE, null, ex);

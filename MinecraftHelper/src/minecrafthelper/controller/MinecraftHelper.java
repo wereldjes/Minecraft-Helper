@@ -37,8 +37,6 @@ public class MinecraftHelper extends Application {
      */
     public static void main(String[] args) {
         launch(args);
-        JsonReader jr = new JsonReader();
-        jr.getJsonData("https://minecraft-ids.grahamedgecombe.com/items.json");
     }
     
 }

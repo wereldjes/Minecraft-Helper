@@ -5,13 +5,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import minecrafthelper.datalayer.BlockDao;
 import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class JsonReader {
     JSONParser parser = new JSONParser();
+    BlockDao blockDao = new BlockDao();
     
     public void getJsonData(String sUrl){
         try {
@@ -25,10 +26,7 @@ public class JsonReader {
             }
             
             JSONArray arr = (JSONArray)parser.parse(i);
-            arr.forEach(block -> {
-                JSONObject obj = (JSONObject)block;
-                System.out.println("ID:" + obj.get("type") + " name:" + obj.get("name"));
-            });
+            blockDao.addAllBlocks(arr);
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
