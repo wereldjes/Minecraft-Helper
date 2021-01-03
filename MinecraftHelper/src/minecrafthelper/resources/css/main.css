@@ -1,7 +1,36 @@
-GridPane {
-    -fx-background-color: darkgray;
+@font-face {
+    font-family: 'Minecraft';
+    src: url('/minecrafthelper/resources/Minecraft.ttf');
+}
+
+VBox {
+    -fx-background-image: url("/minecrafthelper/resources/minecraft_background.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+    -fx-background-size: cover;
     -fx-padding: 10px;
-    -fx-hgap: 10px;
-    -fx-vgap: 5px;
     -fx-alignment: center;
+    -fx-padding: 10px 10px 10px 10px;
+    -fx-spacing: 10;
+}
+
+Button {
+        -fx-min-width: 200px;
+        -fx-background-color: darkgray;
+        -fx-padding-top: 10px;
+        -fx-border-color: black;
+        -fx-border-width: 1.5px;
+        -fx-background-insets: 0;
+}
+
+Button:hover {
+    -fx-background-color: lightgray;
+}
+
+Button.mainMenuButton {
+    -fx-min-width: 500px;
+    -fx-min-height: 75px;
+    -fx-font-size: 30px;
+    -fx-margin: 15px;
+    -fx-font-family: 'Minecraft';
 }
