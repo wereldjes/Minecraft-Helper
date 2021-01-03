@@ -3,7 +3,7 @@
     src: url('/minecrafthelper/resources/Minecraft.ttf');
 }
 
-VBox {
+VBox, HBox {
     -fx-background-image: url("/minecrafthelper/resources/minecraft_background.jpg");
     -fx-background-repeat: stretch;
     -fx-background-position: center center;
@@ -15,12 +15,13 @@ VBox {
 }
 
 Button {
-        -fx-min-width: 200px;
-        -fx-background-color: darkgray;
-        -fx-padding-top: 10px;
-        -fx-border-color: black;
-        -fx-border-width: 1.5px;
-        -fx-background-insets: 0;
+    -fx-min-width: 200px;
+    -fx-background-color: darkgray;
+    -fx-padding-top: 10px;
+    -fx-border-color: black;
+    -fx-border-width: 1.5px;
+    -fx-background-insets: 0;
+    -fx-font-family: 'Minecraft';
 }
 
 Button:hover {
@@ -32,5 +33,4 @@ Button.mainMenuButton {
     -fx-min-height: 75px;
     -fx-font-size: 30px;
     -fx-margin: 15px;
-    -fx-font-family: 'Minecraft';
 }
