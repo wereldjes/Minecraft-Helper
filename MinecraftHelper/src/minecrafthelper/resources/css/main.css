@@ -3,15 +3,14 @@
     src: url('/minecrafthelper/resources/Minecraft.ttf');
 }
 
-VBox, HBox {
+.background {
     -fx-background-image: url("/minecrafthelper/resources/minecraft_background.jpg");
     -fx-background-repeat: stretch;
     -fx-background-position: center center;
     -fx-background-size: cover;
-    -fx-padding: 10px;
     -fx-alignment: center;
-    -fx-padding: 10px 10px 10px 10px;
     -fx-spacing: 10;
+    -fx-font-family: 'Minecraft';
 }
 
 Button {
@@ -21,7 +20,6 @@ Button {
     -fx-border-color: black;
     -fx-border-width: 1.5px;
     -fx-background-insets: 0;
-    -fx-font-family: 'Minecraft';
 }
 
 Button:hover {
@@ -33,4 +31,28 @@ Button.mainMenuButton {
     -fx-min-height: 75px;
     -fx-font-size: 30px;
     -fx-margin: 15px;
+}
+
+.blockInfo {
+    -fx-min-width: 150px;
+    -fx-min-height: 150px;
+    -fx-background-color: darkgray;
+    -fx-border-width: 1.5px;
+    -fx-border-color: black;
+
+}
+
+FlowPane {
+    -fx-hgap: 15;
+    -fx-vgap: 15;
+    -fx-alignment: TOP_CENTER;
+}
+
+ScrollPane {
+    -fx-padding: 10px;
+    -fx-background-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
 }

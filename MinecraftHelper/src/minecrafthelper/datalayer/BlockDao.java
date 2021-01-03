@@ -17,8 +17,16 @@ import org.json.simple.JSONObject;
  * @author Dominique
  */
 public class BlockDao {
+    private static BlockDao instance;
     
-    public void getAllBlocks(){
+    public static BlockDao getInstance() {
+        if(instance == null) {
+            instance = new BlockDao();
+        }
+        return instance;
+    }
+    
+    public List<Block> getAllBlocks(){
         Connection con = null;
         List<Block> allBlocks = new ArrayList<>();
         String query = "SELECT * FROM block";
@@ -32,9 +40,12 @@ public class BlockDao {
                 Block b = new Block(rs.getInt("type"), rs.getInt("meta"), rs.getString("name"), rs.getString("text_type"));
                 allBlocks.add(b);
             }
+            
+            return allBlocks;
         } catch (SQLException ex) {
             Logger.getLogger(MysqlConnector.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return null;
     }
     
     public void addAllBlocks(JSONArray array) {

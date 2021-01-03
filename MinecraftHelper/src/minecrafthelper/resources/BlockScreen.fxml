@@ -7,9 +7,20 @@
 <?import javafx.scene.layout.*?>
 <?import java.net.*?>
 
-<HBox id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
-    
+<BorderPane styleClass="background" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        
+    </top>
+    <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true" styleClass="edge-to-edge" >
+            <FlowPane fx:id="blockList">
+                <children>
+
+                </children>
+            </FlowPane>
+        </ScrollPane>
+    </center>
     <stylesheets>
         <URL value="@css/main.css" />
     </stylesheets>
-</HBox>
+</BorderPane>
