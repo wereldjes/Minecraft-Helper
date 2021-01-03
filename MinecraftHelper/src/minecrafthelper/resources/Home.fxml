@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.*?>
+
+<VBox id="GridPane" prefHeight="500" prefWidth="750" xmlns:fx="http://javafx.com/fxml/1" >
+    <Button text="SHOW BLOCKS" styleClass="mainMenuButton" fx:id="showBlocks"/>
+    <Button text="LOAD JSON" styleClass="mainMenuButton" fx:id="jsonLoader" />
+
+    <stylesheets>
+        <URL value="@css/main.css" />
+    </stylesheets>
+</VBox>

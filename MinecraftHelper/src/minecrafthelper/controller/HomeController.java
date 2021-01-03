@@ -13,10 +13,13 @@ import javafx.scene.control.Button;
 public class HomeController implements Initializable {
     
     @FXML
+    private Button showBlocks;
+    @FXML
     private Button jsonLoader;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        showBlocks.setOnAction(event -> showAllBlocks());
         jsonLoader.setOnAction(event -> loadJson());
     }
     
@@ -26,4 +29,8 @@ public class HomeController implements Initializable {
         reader.getJsonData("https://minecraft-ids.grahamedgecombe.com/items.json");
     }
     
+    @FXML
+    public void showAllBlocks() {
+        
+    }   
 }
