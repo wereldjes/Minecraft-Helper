@@ -19,7 +19,7 @@ public class MinecraftHelper extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLDocumentController controller = new FXMLDocumentController();
+        HomeController controller = new HomeController();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/minecrafthelper/view/Home.fxml"));
         loader.setController(controller);
         Parent root = loader.load();
