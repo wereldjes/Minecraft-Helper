@@ -1,0 +1,7 @@
+GridPane {
+    -fx-background-color: darkgray;
+    -fx-padding: 10px;
+    -fx-hgap: 10px;
+    -fx-vgap: 5px;
+    -fx-alignment: center;
+}

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package minecrafthelper;
+package minecrafthelper.controller;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -19,11 +19,16 @@ public class MinecraftHelper extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        FXMLDocumentController controller = new FXMLDocumentController();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/minecrafthelper/view/Home.fxml"));
+        loader.setController(controller);
+        Parent root = loader.load();
         
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
+        stage.setMaximized(true);
+        stage.setTitle("Minecraft Helper");
         stage.show();
     }
 

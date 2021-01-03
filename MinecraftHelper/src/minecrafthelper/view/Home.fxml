@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.*?>
+
+<GridPane id="GridPane" prefHeight="500" prefWidth="750" xmlns:fx="http://javafx.com/fxml/1" >
+        <Button layoutX="126" layoutY="90" text="Click Me!" fx:id="button" />
+        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
+        
+        <stylesheets>
+            <URL value="@css/main.css" />
+        </stylesheets>
+</GridPane>
