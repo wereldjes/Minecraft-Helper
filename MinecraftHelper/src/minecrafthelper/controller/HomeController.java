@@ -1,11 +1,17 @@
 package minecrafthelper.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import minecrafthelper.datalayer.BlockDao;
 
 /**
  *
@@ -16,6 +22,8 @@ public class HomeController implements Initializable {
     @FXML
     private Button showBlocks;
     @FXML
+    private Button deleteData;
+    @FXML
     private Button jsonLoader;
     @FXML
     private Button closeApp;
@@ -23,8 +31,26 @@ public class HomeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         showBlocks.setOnAction(event -> showAllBlocks());
+        deleteData.setOnAction(event-> deleteData());
         jsonLoader.setOnAction(event -> loadJson());
         closeApp.setOnAction(event->close());
+    }
+    
+    public HomeController() {
+
+    }
+    
+    public HomeController(Stage stage) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/minecrafthelper/resources/Home.fxml"));
+        loader.setController(this);
+        Parent root;
+        try {
+            root = loader.load();
+            stage.getScene().setRoot(root);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(BlockScreenController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     @FXML
@@ -43,5 +69,11 @@ public class HomeController implements Initializable {
     public void close(){
         Stage stage = (Stage)closeApp.getScene().getWindow();
         stage.close();
+    }
+    
+    @FXML
+    public void deleteData() {
+        BlockDao bdao = new BlockDao();
+        bdao.deleteData();
     }
 }

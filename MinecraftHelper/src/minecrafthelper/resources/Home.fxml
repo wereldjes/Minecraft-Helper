@@ -9,7 +9,8 @@
 
 <VBox styleClass="background" prefHeight="500" prefWidth="750" xmlns:fx="http://javafx.com/fxml/1" >
     <Button text="SHOW BLOCKS" styleClass="mainMenuButton" fx:id="showBlocks"/>
-    <Button text="LOAD JSON" styleClass="mainMenuButton" fx:id="jsonLoader" />
+    <Button text="LOAD DATA" styleClass="mainMenuButton" fx:id="jsonLoader" />
+    <Button text="DELETE DATA" styleClass="mainMenuButton" fx:id="deleteData" />
     <Button text="CLOSE APPLICATION" id="closeAppButton" styleClass="mainMenuButton" fx:id="closeApp"/>
 
     <stylesheets>

@@ -56,3 +56,32 @@ ScrollPane {
 .scroll-pane > .viewport {
     -fx-background-color: transparent;
 }
+
+#navbar {
+    -fx-padding: 15px;
+}
+
+.navButton {
+    -fx-min-width: 250px;
+    -fx-min-height: 50px;
+    -fx-font-size: 17;
+}
+
+.blockBoxInfo {
+    -fx-pref-height: 100px;
+    -fx-max-height: 100px;
+    -fx-pref-width: 100px;
+    -fx-max-width: 100px;
+    -fx-background-image: url("/minecrafthelper/resources/minecraft_stone.png");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
+
+Label {
+    -fx-font-size: 18;
+    -fx-wrap-text: true;
+    -fx-alignment: CENTER;
+    -fx-text-alignment: CENTER;
+    -fx-text-fill: white;
+}

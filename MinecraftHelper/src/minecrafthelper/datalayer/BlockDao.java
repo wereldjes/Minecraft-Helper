@@ -74,4 +74,17 @@ public class BlockDao {
         }
         
     }
+    
+    public void deleteData() {
+        Connection con = null;
+        String query = "DELETE FROM block";
+        
+        try {
+            con = MysqlConnector.getInstance().connect();
+            PreparedStatement st = con.prepareStatement(query);
+            st.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(BlockDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

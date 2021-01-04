@@ -9,7 +9,13 @@
 
 <BorderPane styleClass="background" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
     <top>
-        
+        <HBox id="navbar" BorderPane.alignment="TOP_CENTER" >
+            <children>
+                <TextField styleClass="navButton" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button styleClass="navButton" fx:id="menuButton" text="Back to Menu"/>
+            </children>
+        </HBox>
     </top>
     <center>
         <ScrollPane fitToHeight="true" fitToWidth="true" styleClass="edge-to-edge" >
