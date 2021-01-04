@@ -1,5 +1,6 @@
 package minecrafthelper.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -10,7 +11,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 import minecrafthelper.Domain.Block;
@@ -34,13 +37,14 @@ public class BlockScreenController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        for(Block b : BlockDao.getInstance().getAllBlocks()) {
+                for(Block b : BlockDao.getInstance().getAllBlocks()) {
             Button blockInfoButton = new Button();
             blockInfoButton.setId(String.valueOf(b.getType()));
             blockInfoButton.getStyleClass().add("blockInfoButton");
             
-            blockInfoButton.setText(b.getName()+"\n"+
-                    String.valueOf(b.getType()) + " - " + String.valueOf(b.getMeta()));
+            blockInfoButton.setGraphic(new ImageView("/minecrafthelper/resources/items/"+String.valueOf(b.getType()+"-"+String.valueOf(b.getMeta())+".png")));
+            blockInfoButton.setContentDisplay(ContentDisplay.TOP);
+            blockInfoButton.setText(b.getName());
             
             blockList.getChildren().add(blockInfoButton);
         }
@@ -74,6 +78,8 @@ public class BlockScreenController implements Initializable {
             Button blockInfoButton = new Button();
             blockInfoButton.setId(String.valueOf(b.getType()));
             blockInfoButton.getStyleClass().add("blockInfoButton");
+            blockInfoButton.setGraphic(new ImageView("/minecrafthelper/resources/items/"+String.valueOf(b.getType()+"-"+String.valueOf(b.getMeta())+".png")));
+            blockInfoButton.setContentDisplay(ContentDisplay.TOP);
             blockInfoButton.setText(b.getName()+"\n"+
                 String.valueOf(b.getType()) + " - " + String.valueOf(b.getMeta()));
             blockList.getChildren().add(blockInfoButton);
