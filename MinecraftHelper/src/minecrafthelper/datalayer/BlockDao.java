@@ -99,7 +99,6 @@ public class BlockDao {
                 con = MysqlConnector.getInstance().connect();
                 PreparedStatement st = con.prepareStatement(query);
                 st.setString(1, "%"+search+"%");
-                System.out.println(st.toString());
                 ResultSet rs = st.executeQuery();
 
                 while(rs.next()){
