@@ -37,7 +37,7 @@ public class BlockScreenController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-                for(Block b : BlockDao.getInstance().getAllBlocks()) {
+        for(Block b : BlockDao.getInstance().getAllBlocks()) {
             Button blockInfoButton = new Button();
             blockInfoButton.setId(String.valueOf(b.getType()));
             blockInfoButton.getStyleClass().add("blockInfoButton");

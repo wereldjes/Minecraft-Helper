@@ -72,12 +72,12 @@ ScrollPane {
 }
 
 .blockInfoButton {
-    -fx-pref-height: 175px;
-    -fx-max-height: 175px;
-    -fx-pref-width: 175px;
-    -fx-max-width: 175px;
-    -fx-min-width: 175px;
-    -fx-min-height: 175px;
+    -fx-pref-height: 165px;
+    -fx-max-height: 165px;
+    -fx-pref-width: 165px;
+    -fx-max-width: 165px;
+    -fx-min-width: 165px;
+    -fx-min-height: 165px;
     -fx-background-image: url("/minecrafthelper/resources/minecraft_stone.png");
     -fx-background-size: cover;
     -fx-background-position: center center;
@@ -90,5 +90,5 @@ ScrollPane {
 }
 
 .blockInfoButton:hover {
-    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-opacity: 0.925;
 }
