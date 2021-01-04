@@ -14,15 +14,15 @@
 }
 
 Button {
-    -fx-min-width: 200px;
     -fx-background-color: darkgray;
     -fx-padding-top: 10px;
     -fx-border-color: black;
     -fx-border-width: 1.5px;
     -fx-background-insets: 0;
+    -fx-cursor: hand;
 }
 
-Button:hover {
+.mainMenuButton:hover, .navButton:hover, #searchButton {
     -fx-background-color: lightgray;
 }
 
@@ -39,7 +39,6 @@ Button.mainMenuButton {
     -fx-background-color: darkgray;
     -fx-border-width: 1.5px;
     -fx-border-color: black;
-
 }
 
 FlowPane {
@@ -61,27 +60,35 @@ ScrollPane {
     -fx-padding: 15px;
 }
 
-.navButton {
+#searchButton {
+    -fx-min-height: 50px;
+    -fx-font-size: 17;
+}
+
+.navButton{
     -fx-min-width: 250px;
     -fx-min-height: 50px;
     -fx-font-size: 17;
 }
 
-.blockBoxInfo {
-    -fx-pref-height: 100px;
-    -fx-max-height: 100px;
-    -fx-pref-width: 100px;
-    -fx-max-width: 100px;
+.blockInfoButton {
+    -fx-pref-height: 150px;
+    -fx-max-height: 150px;
+    -fx-pref-width: 150px;
+    -fx-max-width: 150px;
+    -fx-min-width: 150px;
+    -fx-min-height: 150px;
     -fx-background-image: url("/minecrafthelper/resources/minecraft_stone.png");
     -fx-background-size: cover;
     -fx-background-position: center center;
     -fx-background-repeat: stretch;
-}
-
-Label {
     -fx-font-size: 18;
     -fx-wrap-text: true;
     -fx-alignment: CENTER;
     -fx-text-alignment: CENTER;
     -fx-text-fill: white;
+}
+
+.blockInfoButton:hover {
+    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
 }

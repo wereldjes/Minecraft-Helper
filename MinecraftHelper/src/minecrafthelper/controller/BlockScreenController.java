@@ -8,12 +8,10 @@ import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import minecrafthelper.Domain.Block;
 import minecrafthelper.datalayer.BlockDao;
@@ -29,29 +27,26 @@ public class BlockScreenController implements Initializable {
     private FlowPane blockList;
     @FXML
     private Button menuButton;
+    @FXML
+    private TextField searchbar;
+    @FXML
+    private Button searchbarButton;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         for(Block b : BlockDao.getInstance().getAllBlocks()) {
-            VBox blockInfo = new VBox();
-            blockInfo.getStyleClass().add("blockBoxInfo");
-            blockInfo.setFillWidth(true);
-            Label blockName = new Label();
-            blockName.setMaxWidth(Double.MAX_VALUE);
-            Label blockId = new Label();
+            Button blockInfoButton = new Button();
+            blockInfoButton.setId(String.valueOf(b.getType()));
+            blockInfoButton.getStyleClass().add("blockInfoButton");
             
-            blockInfo.setAlignment(Pos.CENTER);
-            blockInfo.getStyleClass().add("blockInfo");
-            blockName.setText(b.getName());
-            blockId.setText(String.valueOf(b.getType()) + " - " + String.valueOf(b.getMeta()));
+            blockInfoButton.setText(b.getName()+"\n"+
+                    String.valueOf(b.getType()) + " - " + String.valueOf(b.getMeta()));
             
-            blockInfo.getChildren().add(blockName);
-            blockInfo.getChildren().add(blockId);
-            
-            blockList.getChildren().add(blockInfo);
+            blockList.getChildren().add(blockInfoButton);
         }
         
         menuButton.setOnAction(event->backToMenu());
+        searchbarButton.setOnAction(event->searchBlock());
     }    
     
     public BlockScreenController(Stage stage){
@@ -70,6 +65,19 @@ public class BlockScreenController implements Initializable {
     public void backToMenu() {
         Stage stage = (Stage) menuButton.getScene().getWindow();
         HomeController hc = new HomeController(stage);
+    }
     
+    public void searchBlock() {
+        blockList.getChildren().clear();
+        BlockDao bdao = new BlockDao();
+        for(Block b : bdao.searchBlock(searchbar.getText())){
+            Button blockInfoButton = new Button();
+            blockInfoButton.setId(String.valueOf(b.getType()));
+            blockInfoButton.getStyleClass().add("blockInfoButton");
+            blockInfoButton.setText(b.getName()+"\n"+
+                String.valueOf(b.getType()) + " - " + String.valueOf(b.getMeta()));
+            blockList.getChildren().add(blockInfoButton);
+        }
+
     }
 }

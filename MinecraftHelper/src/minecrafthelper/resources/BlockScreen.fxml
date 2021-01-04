@@ -11,7 +11,8 @@
     <top>
         <HBox id="navbar" BorderPane.alignment="TOP_CENTER" >
             <children>
-                <TextField styleClass="navButton" />
+                <TextField styleClass="navButton" fx:id="searchbar" />
+                <Button text="Search" id="searchButton" fx:id="searchbarButton" />
                 <Region HBox.hgrow="ALWAYS" />
                 <Button styleClass="navButton" fx:id="menuButton" text="Back to Menu"/>
             </children>

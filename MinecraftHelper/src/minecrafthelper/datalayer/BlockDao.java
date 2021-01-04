@@ -87,4 +87,34 @@ public class BlockDao {
             Logger.getLogger(BlockDao.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public List<Block> searchBlock(String search) {
+        Connection con = null;
+        List<Block> blocks = new ArrayList<>();
+        Block b = null;
+        String query = "SELECT * FROM block WHERE name LIKE ?";
+        
+        if(!search.equals("")) {
+            try {
+                con = MysqlConnector.getInstance().connect();
+                PreparedStatement st = con.prepareStatement(query);
+                st.setString(1, "%"+search+"%");
+                System.out.println(st.toString());
+                ResultSet rs = st.executeQuery();
+
+                while(rs.next()){
+                    b = new Block(rs.getInt("type"), rs.getInt("meta"), rs.getString("name"), rs.getString("text_type"));
+                    blocks.add(b);
+                }
+
+                return blocks;
+            } catch (SQLException ex) {
+                Logger.getLogger(BlockDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            return getAllBlocks();
+        }
+        
+        return null;
+    }
 }
