@@ -1,7 +1,10 @@
 package minecrafthelper.controller;
 
+import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -45,6 +48,7 @@ public class BlockScreenController implements Initializable {
             blockInfoButton.setGraphic(new ImageView("/minecrafthelper/resources/items/"+String.valueOf(b.getType()+"-"+String.valueOf(b.getMeta())+".png")));
             blockInfoButton.setContentDisplay(ContentDisplay.TOP);
             blockInfoButton.setText(b.getName());
+            blockInfoButton.setOnAction(event->showInfo(b.getName()));
             
             blockList.getChildren().add(blockInfoButton);
         }
@@ -86,5 +90,16 @@ public class BlockScreenController implements Initializable {
             blockList.getChildren().add(blockInfoButton);
         }
 
+    }
+    
+    public void showInfo(String name) {
+        String urlString = name.replaceAll(" ", "%20");
+        if(Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+            try {
+                Desktop.getDesktop().browse(new URI("https://minecraft.gamepedia.com/"+urlString));
+            } catch (URISyntaxException | IOException ex) {
+                Logger.getLogger(BlockScreenController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 }
