@@ -11,8 +11,8 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class JsonReader {
-    JSONParser parser = new JSONParser();
-    BlockDao blockDao = new BlockDao();
+    private final JSONParser parser = new JSONParser();
+    private final BlockDao blockDao = new BlockDao();
     
     public void getJsonData(String sUrl){
         try {

@@ -92,3 +92,23 @@ ScrollPane {
 .blockInfoButton:hover {
     -fx-opacity: 0.925;
 }
+
+.message {
+    -fx-background-color: lightgreen;
+    -fx-border-color: darkgreen;
+    -fx-border-width: 1.5;
+    -fx-font-size: 20;
+    -fx-padding: 20px;
+    -fx-spacing: 20px;
+}
+
+#menuDiv {
+    -fx-spacing: 10;
+    -fx-alignment: CENTER;
+    -fx-padding: -120 0 0 0;
+}
+
+#messageDiv {
+    -fx-padding: 20;
+    -fx-min-height: 120px;
+}

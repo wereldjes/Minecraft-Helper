@@ -51,6 +51,7 @@ public class BlockScreenController implements Initializable {
         
         menuButton.setOnAction(event->backToMenu());
         searchbarButton.setOnAction(event->searchBlock());
+        searchbar.setOnKeyReleased(event->searchBlock());
     }    
     
     public BlockScreenController(Stage stage){

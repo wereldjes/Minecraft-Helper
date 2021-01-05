@@ -8,8 +8,11 @@ import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import minecrafthelper.datalayer.BlockDao;
 
@@ -27,6 +30,8 @@ public class HomeController implements Initializable {
     private Button jsonLoader;
     @FXML
     private Button closeApp;
+    @FXML
+    private StackPane messageDiv;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -57,6 +62,11 @@ public class HomeController implements Initializable {
     public void loadJson() {
         JsonReader reader = new JsonReader();
         reader.getJsonData("https://minecraft-ids.grahamedgecombe.com/items.json");
+        Label message = new Label();
+        message.setText("Loading data successful");
+        message.getStyleClass().add("message");
+        messageDiv.getChildren().add(message);
+        messageDiv.setAlignment(Pos.CENTER);
     }
     
     @FXML
@@ -75,5 +85,10 @@ public class HomeController implements Initializable {
     public void deleteData() {
         BlockDao bdao = new BlockDao();
         bdao.deleteData();
+        Label message = new Label();
+        message.setText("Deleting data successful");
+        message.getStyleClass().add("message");
+        messageDiv.getChildren().add(message);
+        messageDiv.setAlignment(Pos.CENTER);
     }
 }

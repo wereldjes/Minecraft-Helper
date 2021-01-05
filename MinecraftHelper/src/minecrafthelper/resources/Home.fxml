@@ -6,14 +6,26 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import java.net.*?>
+<BorderPane  xmlns:fx="http://javafx.com/fxml/1" styleClass="background" prefHeight="400.0" prefWidth="600.0">
+    <top>
+        <StackPane id="messageDiv" fx:id="messageDiv" BorderPane.alignment="TOP_CENTER" >
+            <children>
 
-<VBox styleClass="background" prefHeight="500" prefWidth="750" xmlns:fx="http://javafx.com/fxml/1" >
-    <Button text="SHOW BLOCKS" styleClass="mainMenuButton" fx:id="showBlocks"/>
-    <Button text="LOAD DATA" styleClass="mainMenuButton" fx:id="jsonLoader" />
-    <Button text="DELETE DATA" styleClass="mainMenuButton" fx:id="deleteData" />
-    <Button text="CLOSE APPLICATION" id="closeAppButton" styleClass="mainMenuButton" fx:id="closeApp"/>
+            </children> 
+        </StackPane>
+    </top>
+    <center>
+        <VBox id="menuDiv" BorderPane.alignment="CENTER" >
+            <children>
+                <Button text="SHOW BLOCKS" styleClass="mainMenuButton" fx:id="showBlocks"/>
+                <Button text="LOAD DATA" styleClass="mainMenuButton" fx:id="jsonLoader" />
+                <Button text="DELETE DATA" styleClass="mainMenuButton" fx:id="deleteData" />
+                <Button text="CLOSE APPLICATION" id="closeAppButton" styleClass="mainMenuButton" fx:id="closeApp"/>
+            </children>
+        </VBox>
+    </center>
 
     <stylesheets>
-        <URL value="@css/main.css" />
+            <URL value="@css/main.css" />
     </stylesheets>
-</VBox>
+</BorderPane>
