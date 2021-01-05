@@ -85,7 +85,8 @@ public class BlockScreenController implements Initializable {
             blockInfoButton.getStyleClass().add("blockInfoButton");
             blockInfoButton.setGraphic(new ImageView("/minecrafthelper/resources/items/"+String.valueOf(b.getType()+"-"+String.valueOf(b.getMeta())+".png")));
             blockInfoButton.setContentDisplay(ContentDisplay.TOP);
-           blockInfoButton.setText(b.getName());
+            blockInfoButton.setText(b.getName());
+            blockInfoButton.setOnAction(event->showInfo(b.getName()));
             blockList.getChildren().add(blockInfoButton);
         }
 
